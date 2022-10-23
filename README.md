@@ -27,3 +27,4 @@ En su terminal de Visual Studio Code deben instalar las sigientes dependencias
 
 ## Tener en cuenta
 - Solamente tener un monitor activado al usarlo
+- Si existe algún problema técnico contactar al administrador del repositorio
