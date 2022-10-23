@@ -2,6 +2,7 @@ import pyautogui as pt
 import pyperclip as pc
 from pynput.mouse import Controller, Button
 from time import sleep
+from responses import response
 
 mouse = Controller()
 
@@ -21,7 +22,7 @@ class DiingoBot:
     #Solo funciona en modo oscuro whatsapp
     def navigation(self):
         try:
-            pos = pt.locateOnScreen("assets/debug.png", confidence = .7) #TODO: change 'debug' to 'new_message'
+            pos = pt.locateOnScreen("assets/new_message.png", confidence = .7) #TODO: switch between debug and new_message when needed
             pt.moveTo(pos[0:2], duration=self.speed)
             pt.moveRel(-100, 0, duration=self.speed)
             pt.doubleClick(interval=self.click_speed)
@@ -41,18 +42,14 @@ class DiingoBot:
         try:
             pos = pt.locateOnScreen("assets/file.png", confidence = .7)
             pt.moveTo(pos[0:2], duration=self.speed)
-            pt.moveRel(850, -50, duration=self.speed)
+            #pt.moveRel(850, -50, duration=self.speed)
+            pt.moveRel(50, -50, duration=self.speed)
         except Exception as e:
             print('Exception: (get_message) ', e)
 
     def copy_message(self):
         pt.doubleClick(interval=.3)
         sleep(self.speed)
-        #pt.moveRel(0, -10, duration=self.speed)
-        #pt.leftClick()
-        #sleep(1)
-
-        #self.message = pc.paste()
 
         mouse.click(Button.left, 3)
         sleep(self.speed)
@@ -64,11 +61,25 @@ class DiingoBot:
 
         self.message = pc.paste()
         print('Message: ', self.message)
+    
+    def send_message(self):
+        try:
+            if self.message != self.last_message:
+                bot_reply = response(self.message)
+                print(bot_reply)
+                pt.typewrite(bot_reply, interval=.1)
+                pt.typewrite('\n')
+
+                self.last_message = self.message
+            else:
+                print('nothing new...')
+        except Exception as e:
+            print('Exception: (send_message) ', e)
 
 startBot = DiingoBot(speed=.7, click_speed=.7)
 sleep(2)
-#startBot.navigation()
+startBot.navigation()
 startBot.get_message()
-sleep(2)
 startBot.copy_message()
-#startBot.box_input()
+startBot.box_input()
+startBot.send_message()
