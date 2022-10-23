@@ -22,7 +22,7 @@ class DiingoBot:
     #Solo funciona en modo oscuro whatsapp
     def navigation(self):
         try:
-            pos = pt.locateOnScreen("assets/new_message.png", confidence = .7) #TODO: switch between debug and new_message when needed
+            pos = pt.locateOnScreen("assets/new_message.png", confidence = .7)
             pt.moveTo(pos[0:2], duration=self.speed)
             pt.moveRel(-100, 0, duration=self.speed)
             pt.doubleClick(interval=self.click_speed)
@@ -68,18 +68,22 @@ class DiingoBot:
                 bot_reply = response(self.message)
                 print(bot_reply)
                 pt.typewrite(bot_reply, interval=.1)
-                pt.typewrite('\n')
+                #pt.typewrite('\n')
 
                 self.last_message = self.message
             else:
-                print('nothing new...')
+                print('Nothing new...')
         except Exception as e:
             print('Exception: (send_message) ', e)
 
 startBot = DiingoBot(speed=.7, click_speed=.7)
 sleep(2)
-startBot.navigation()
-startBot.get_message()
-startBot.copy_message()
-startBot.box_input()
-startBot.send_message()
+
+while True:
+    startBot.navigation()
+    startBot.get_message()
+    startBot.copy_message()
+    startBot.box_input()
+    startBot.send_message()
+
+    sleep(10)
