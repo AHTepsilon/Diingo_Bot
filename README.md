@@ -11,10 +11,19 @@ Instalar Aquí <br>
 En su terminal de Visual Studio Code deben instalar las sigientes dependencias
 
 ###### Auto GUI
+```
 : pip install pyautogui
+```
 
 ###### OPENCV + NUMPY
+```
 : pip install opencv-python
+```
 
 ###### PYnput
+```
 : pip install pynput
+```
+
+## Tener en cuenta
+- Solamente tener un monitor activado al usarlo
