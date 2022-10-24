@@ -67,8 +67,8 @@ class DiingoBot:
             if self.message != self.last_message:
                 bot_reply = response(self.message)
                 print(bot_reply)
-                pt.typewrite(bot_reply, interval=.1)
-                #pt.typewrite('\n')
+                pt.typewrite(bot_reply, interval=.05)
+                pt.typewrite('\n')
 
                 self.last_message = self.message
             else:
@@ -77,7 +77,7 @@ class DiingoBot:
             print('Exception: (send_message) ', e)
 
 startBot = DiingoBot(speed=.7, click_speed=.7)
-sleep(2)
+sleep(4)
 
 while True:
     startBot.navigation()
