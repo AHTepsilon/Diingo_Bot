@@ -48,16 +48,20 @@ class DiingoBot:
             print('Exception: (get_message) ', e)
 
     def copy_message(self):
+
+        
         pt.doubleClick(interval=.3)
         sleep(self.speed)
-
         mouse.click(Button.left, 3)
         sleep(self.speed)
-        mouse.click(Button.right, 1)
-        sleep(self.speed)
-        pt.moveRel(30, -180, duration=self.speed)
-        mouse.click(Button.left, 1)
-        sleep(1)
+        pt.keyDown('ctrl')
+        pt.press('c')
+        pt.keyUp('ctrl')
+        #mouse.click(Button.right, 1)
+        #sleep(self.speed)
+        #pt.moveRel(30, -260, duration=self.speed)
+        #mouse.click(Button.left, 1)
+        #sleep(1)
 
         self.message = pc.paste()
         print('Message: ', self.message)
@@ -67,7 +71,7 @@ class DiingoBot:
             if self.message != self.last_message:
                 bot_reply = response(self.message)
                 print(bot_reply)
-                pt.typewrite(bot_reply, interval=.05)
+                pt.typewrite(bot_reply, interval=.01)
                 pt.typewrite('\n')
 
                 self.last_message = self.message

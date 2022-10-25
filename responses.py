@@ -27,6 +27,4 @@ def response(input):
         12. Si lo deseas, puedes seguir estas instrucciones para conectar tu cuenta comercial a una pagina de Facebook asociada a tu empresa. Este paso, que es opcional, facilita el uso de todas las funciones disponibles para las empresas en la familia de apps de Facebook. Por el momento, solo es posible conectar una pagina de Facebook a una cuenta comercial.\n
         13. Pulsa la X en la esquina superior derecha para regresar a tu perfil.\n
         '''
-
-    
-    
+ 
