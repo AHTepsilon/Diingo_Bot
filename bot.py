@@ -42,8 +42,8 @@ class DiingoBot:
         try:
             pos = pt.locateOnScreen("assets/file.png", confidence = .7)
             pt.moveTo(pos[0:2], duration=self.speed)
-            #pt.moveRel(850, -50, duration=self.speed)
-            pt.moveRel(50, -50, duration=self.speed)
+            pt.moveRel(850, -50, duration=self.speed)
+            #pt.moveRel(50, -50, duration=self.speed)
         except Exception as e:
             print('Exception: (get_message) ', e)
 
