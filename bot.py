@@ -17,7 +17,7 @@ class DiingoBot:
         self.click_speed = click_speed
         self.message = ""
         self.last_message = ""
-
+        self.message_point = -1
     #Método para que el programa detecte los puntos con mensajes nuevos
     #Solo funciona en modo oscuro whatsapp
     def navigation(self):
@@ -69,7 +69,8 @@ class DiingoBot:
     def send_message(self):
         try:
             if self.message != self.last_message:
-                bot_reply = response(self.message)
+                self.message_point += 1
+                bot_reply = response(self.message, self.message_point)
                 print(bot_reply)
                 pt.typewrite(bot_reply, interval=.01)
                 pt.typewrite('\n')
