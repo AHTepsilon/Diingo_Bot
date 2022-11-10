@@ -9,16 +9,32 @@ class Responses:
 
     id = "000000"
 
-    def response(input, questionID):
+    def response(input):
         message = input.lower()
+        print(Responses.id)
 
-        if point == 0:
+        if Responses.id == "000000":
+
+            if message == "1":
+                Responses.id = "000001"
+            
+            elif message == "2":
+                Responses.id = "000002"
+            
+            else:
+                return '''
+                Bienvenido a Semiigo, ¿deseas registrarte o acceder al banco de preguntas? (Escribe en el chat el numero relacionado con tu pregunta)\n
+                1. Deseo registrarme\n
+                2. Llevame al banco de preguntas'''
+        
+        elif Responses.id == "000001":
+            Responses.id = "000003"
             return '''
-            selecciona la categoria que buscas\n
-            1. Redes Sociales\n'''
+            enlace \n
+            Cuando hayas terminado la encuesta, escribe "listo" en el chat'''
 
-        if point == 1 and message == "1":
-            return '''Bienvenido a Diigo, donde aprenderas lo necesario para comenzar con tus ventas en línea y llevar tu empresa a otro nivel.\n
+        elif Responses.id == "000002":
+            return '''Bienvenido al banco de preguntas de Semiigo, donde aprenderas lo necesario para comenzar con tus ventas en línea y llevar tu empresa a otro nivel.\n
 
             Introducir tu empresa a las plataformas digitales y vender por medio de ellas le permitira expansion y reconocimiento. Anímese a comenzar nuestro curso para que pueda desempeñarse en el mundo del e-commerce.\n
 

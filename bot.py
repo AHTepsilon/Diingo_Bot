@@ -83,11 +83,11 @@ class DiingoBot:
 startBot = DiingoBot(speed=.7, click_speed=.7)
 sleep(4)
 
-while True:
-    startBot.navigation()
-    startBot.get_message()
-    startBot.copy_message()
-    startBot.box_input()
-    startBot.send_message()
+#while True:
+#   startBot.navigation()
+#    startBot.get_message()
+#    startBot.copy_message()
+#    startBot.box_input()
+#    startBot.send_message()
 
-    sleep(10)
+#    sleep(10)
