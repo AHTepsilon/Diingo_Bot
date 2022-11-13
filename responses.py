@@ -1,10 +1,14 @@
 class Responses:
 
     id = "000000"
+    controlBoolean = True
 
     def response(self, input):
         message = input.lower()
         print(Responses.id)
+
+        if Responses.id == "000004":
+            message = ""
 
         if Responses.id == "000000":
 
@@ -46,20 +50,70 @@ class Responses:
             '''
         
         elif Responses.id == "000003":
-            if "S" in message or "Si" in message or "Sí" in message:
-                Responses.id = "000004"
-            elif "N" in message or "No" in message:
-                Responses.id = "000004"
+
+            if Responses.controlBoolean:
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000004"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000004"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Mis ventas son principalmente por medios fisicos (S/N) \n'''
             else:
-                return '''Mis ventas son principalmente por medios fisicos (S/N) \n'''
+                message = ""
+                Responses.controlBoolean = True
         
         elif Responses.id == "000004":
-            if "S" in message or "Si" in message or "Sí" in message:
-                Responses.id = "000005"
-            elif "N" in message or "No" in message:
-                Responses.id = "000005"
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000005"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000005"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Tengo Conocimiento sobre plataformas de venta en linea (S/N) \n'''
             else:
-                return '''Tengo Conocimiento sobre plataformas de venta en linea (S/N) \n'''    
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Tengo Conocimiento sobre plataformas de venta en linea (S/N) \n'''
+
+        elif Responses.id == "000005":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000006"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000006"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Realizo facturacion por cuenta propia, no hago uso de herramientas externas de terceros (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Realizo facturacion por cuenta propia, no hago uso de herramientas externas de terceros (S/N) \n'''
+
+        elif Responses.id == "000006":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000007"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000007"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Tengo una estrategia solida de ventas que he sido capaz de implementar por más de 1 año de manera constante (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Tengo una estrategia solida de ventas que he sido capaz de implementar por más de 1 año de manera constante (S/N) \n'''
         
         elif Responses.id == "999999":
             if message == "1":

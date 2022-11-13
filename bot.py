@@ -71,15 +71,13 @@ class DiingoBot:
     
     def send_message(self):
         try:
-            if self.message != self.last_message:
-                self.message_point += 1
-                bot_reply = res.response(self.message)
-                print(bot_reply)
-                pt.typewrite(bot_reply, interval=.01)
-                pt.typewrite('\n')
+            self.message_point += 1
+            bot_reply = res.response(self.message)
+            print(bot_reply)
+            pt.typewrite(bot_reply, interval=.01)
+            pt.typewrite('\n')
 
-                self.last_message = self.message
-            else:
-                print('Nothing new...')
+            self.last_message = self.message
+
         except Exception as e:
             print('Exception: (send_message) ', e)
