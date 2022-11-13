@@ -2,8 +2,10 @@ import pyautogui as pt
 import pyperclip as pc
 from pynput.mouse import Controller, Button
 from time import sleep
+from responses import Responses
 
 mouse = Controller()
+res = Responses()
 
 print("Initiating...")
 
@@ -41,7 +43,7 @@ class DiingoBot:
         try:
             pos = pt.locateOnScreen("assets/file.png", confidence = .7)
             pt.moveTo(pos[0:2], duration=self.speed)
-            pt.moveRel(850, -50, duration=self.speed)
+            pt.moveRel(890, -50, duration=self.speed)
             #pt.moveRel(50, -50, duration=self.speed)
         except Exception as e:
             print('Exception: (get_message) ', e)
@@ -56,11 +58,6 @@ class DiingoBot:
         pt.keyDown('ctrl')
         pt.press('c')
         pt.keyUp('ctrl')
-        #mouse.click(Button.right, 1)
-        #sleep(self.speed)
-        #pt.moveRel(30, -260, duration=self.speed)
-        #mouse.click(Button.left, 1)
-        #sleep(1)
 
         self.message = pc.paste()
         print('Message: ', self.message)
@@ -69,7 +66,7 @@ class DiingoBot:
         try:
             if self.message != self.last_message:
                 self.message_point += 1
-                bot_reply = response(self.message, self.message_point)
+                bot_reply = res.response(self.message)
                 print(bot_reply)
                 pt.typewrite(bot_reply, interval=.01)
                 pt.typewrite('\n')
@@ -79,15 +76,3 @@ class DiingoBot:
                 print('Nothing new...')
         except Exception as e:
             print('Exception: (send_message) ', e)
-
-startBot = DiingoBot(speed=.7, click_speed=.7)
-sleep(4)
-
-#while True:
-#   startBot.navigation()
-#    startBot.get_message()
-#    startBot.copy_message()
-#    startBot.box_input()
-#    startBot.send_message()
-
-#    sleep(10)

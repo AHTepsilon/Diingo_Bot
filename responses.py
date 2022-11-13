@@ -9,16 +9,16 @@ class Responses:
 
     id = "000000"
 
-    def response(input):
+    def response(self, input):
         message = input.lower()
         print(Responses.id)
 
         if Responses.id == "000000":
 
-            if message == "1":
+            if "1" in message:
                 Responses.id = "000001"
             
-            elif message == "2":
+            elif "2" in message:
                 Responses.id = "000002"
             
             else:
@@ -51,7 +51,7 @@ class Responses:
             9. Mostrar mas preguntas\n
             '''
         
-        if point == 2:
+        elif Responses.id == "999999":
             if message == "1":
                 return '''1. Ve a tu pagina de perfil y pulsa donde dice “Editar perfil.\n
                 2. Una vez en la seccion donde puedes editar tu perfil podras ver un campo llamado “nombre de usuario”. Ahi mismo te deja editarlo.\n
