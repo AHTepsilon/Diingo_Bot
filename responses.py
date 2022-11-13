@@ -1,10 +1,3 @@
-def defineCategory(input):
-    if input == 1:
-        return 1
-    else:
-        return 2
-
-
 class Responses:
 
     id = "000000"
@@ -30,8 +23,9 @@ class Responses:
         elif Responses.id == "000001":
             Responses.id = "000003"
             return '''
-            enlace \n
-            Cuando hayas terminado la encuesta, escribe "listo" en el chat'''
+            Empezaremos con las preguntas de categorizacion. De esta forma personalizaremos el curso a tu medida y te daremos la informacion que sea mas relevante para ti\n
+            Responde a cada pregunta con "S" para Si y "N" para No
+            Cargando preguntas, por favor espera...\n'''
 
         elif Responses.id == "000002":
             return '''Bienvenido al banco de preguntas de Semiigo, donde aprenderas lo necesario para comenzar con tus ventas en línea y llevar tu empresa a otro nivel.\n
@@ -50,6 +44,22 @@ class Responses:
             8. ¿Como ofrecer mis productos a traves de instagram shopping?\n
             9. Mostrar mas preguntas\n
             '''
+        
+        elif Responses.id == "000003":
+            if "S" in message or "Si" in message or "Sí" in message:
+                Responses.id = "000004"
+            elif "N" in message or "No" in message:
+                Responses.id = "000004"
+            else:
+                return '''Mis ventas son principalmente por medios fisicos (S/N) \n'''
+        
+        elif Responses.id == "000004":
+            if "S" in message or "Si" in message or "Sí" in message:
+                Responses.id = "000005"
+            elif "N" in message or "No" in message:
+                Responses.id = "000005"
+            else:
+                return '''Tengo Conocimiento sobre plataformas de venta en linea (S/N) \n'''    
         
         elif Responses.id == "999999":
             if message == "1":

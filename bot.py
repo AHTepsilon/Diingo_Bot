@@ -47,10 +47,17 @@ class DiingoBot:
             #pt.moveRel(50, -50, duration=self.speed)
         except Exception as e:
             print('Exception: (get_message) ', e)
+        
+    def closeRespondBox(self):
+        try:
+            pos = pt.locateOnScreen("assets/closeRespond.png", confidence = .8)
+            pt.moveTo(pos[0:2], duration=self.speed)
+            pt.doubleClick(interval=self.click_speed)
+            pt.moveRel(30, 30, duration=self.speed)
+        except Exception as e:
+            print('Exception: (closeRespondeBox)', e)
 
     def copy_message(self):
-
-        
         pt.doubleClick(interval=.3)
         sleep(self.speed)
         mouse.click(Button.left, 3)
