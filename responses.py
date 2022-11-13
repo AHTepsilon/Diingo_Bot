@@ -114,7 +114,195 @@ class Responses:
                 message = ""
                 Responses.controlBoolean = True  
                 return '''Tengo una estrategia solida de ventas que he sido capaz de implementar por más de 1 año de manera constante (S/N) \n'''
-        
+                
+            
+        elif Responses.id == "000007":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000008"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000008"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Interactuo a menudo con clientes a traves de mis redes sociales (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Interactuo a menudo con clientes a traves de mis redes sociales (S/N) \n'''
+            
+        elif Responses.id == "000008":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000009"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000009"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Tengo conocimiento de como crear una cuenta de instagram y convertirla a modo profesional (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Tengo conocimiento de como crear una cuenta de instagram y convertirla a modo profesional (S/N) \n'''
+                
+        elif Responses.id == "000009":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000010"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000010"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Se como crear publicidad para mi negocio en Facebook, Instagram y Google (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Se ccmo crear publicidad para mi negocio en Facebook, Instagram y Google (S/N) \n'''
+
+        elif Responses.id == "000010":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000011"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000011"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Se como ver las estadísticas de mis publicaciones en redes sociales para revisar el engagement de estas (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Se como ver las estadísticas de mis publicaciones en redes sociales para revisar el engagement de estas (S/N) \n'''
+
+        elif Responses.id == "000011":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000012"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000012"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Mis ganancias provienen en su mayoria de compras en medios digitales (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Mis ganancias provienen en su mayoria de compras en medios digitales (S/N) \n'''
+
+        elif Responses.id == "000012":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000013"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000013"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Se como cambiar mi cuenta de Whatsapp a modo Business para asi tener control de mi negocio a traves de la App de mensajeria (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Se como cambiar mi cuenta de Whatsapp a modo Business para asi tener control de mi negocio a traves de la App de mensajeria (S/N) \n'''
+
+        elif Responses.id == "000013":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000014"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000014"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Manejo un catalogo de mis productos en Whatsapp e Instagram (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Manejo un catalogo de mis productos en Whatsapp e Instagram (S/N) \n'''
+                
+        elif Responses.id == "000014":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000015"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000015"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Tengo conocimientos en el area de ventas y administracion de negocios  (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Tengo conocimientos en el area de ventas y administracion de negocios (S/N) \n'''
+
+        elif Responses.id == "000015":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000016"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000016"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Tengo mi propia pagina web para realizar ventas ademas de mis redes sociales  (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Tengo mi propia pagina web para realizar ventas ademas de mis redes sociales (S/N) \n'''
+
+        elif Responses.id == "000016":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000017"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000017"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Manejo envios para mis productos de manera organizada y efectiva (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Manejo envios para mis productos de manera organizada y efectiva (S/N) \n'''
+
+        elif Responses.id == "000017":
+
+            if Responses.controlBoolean:
+                message = input.lower()
+                if message == "s" or message == "si" or message == "sí":
+                    Responses.id = "000018"
+                    Responses.controlBoolean = False
+                elif message == "n" or message == "no":
+                    Responses.id = "000018"
+                    Responses.controlBoolean = False
+                else:
+                    return '''Me considero una persona activa en redes sociales, constantemente gano seguidores (S/N)\n'''
+            else:
+                message = ""
+                Responses.controlBoolean = True  
+                return '''Me considero una persona activa en redes sociales, constantemente gano seguidores (S/N) \n'''
+
         elif Responses.id == "999999":
             if message == "1":
                 return '''1. Ve a tu pagina de perfil y pulsa donde dice “Editar perfil.\n
