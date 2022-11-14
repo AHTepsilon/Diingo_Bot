@@ -1,6 +1,6 @@
 class Responses:
 
-    id = "000000"
+    id = "000018"
     controlBoolean = True
 
     def response(self, input):
@@ -303,7 +303,38 @@ class Responses:
                 Responses.controlBoolean = True  
                 return '''Me considero una persona activa en redes sociales, constantemente gano seguidores (S/N) \n'''
 
+        elif Responses.id == "000018":
+            Responses.id = "000020"
+            return '''Gracias por tus respuestas, tu perfil ha sido guardado en nuestra base de datos \n
+            Puedes empezar el curso ahora, o puedes volver luego para empezar\n
+            ¿Que te gustaria hacer? \n
+            1. Empezar ahora
+            2. Empezar despues'''
+        
+        elif Responses.id == "000020":
+            if message == "1":
+                Responses.id = "000021"
+            elif message == "2":
+                Responses.id = "999999"
+        
+        elif Responses.id == "000021":
+            return '''
+            Ya ha pasado aquel momento en que Instagram era solo una red para publicar fotos de viajes en la playa, un café delicioso en un bar o una selfie con un paisaje de fondo. Hoy Instagram se ha transformado en una plataforma de negocios donde puedes vender diversos productos y servicios. \n
+            
+            Con más de mil millones de usuarios activos cada mes, era de esperar que Instagram se convirtiera en el lugar perfecto para promocionar y vender productos. \n
+            
+            De hecho, 15 millones de empresas latinoamericanas tienen un perfil en instagram y el 80% de los usuarios sigue por lo menos a una de estas marcas. \n
+            
+            Estos datos no dejan lugar a dudas: vender en Instagram puede hacer despegar tu negocio. Y además de aumentar las ventas, también puedes acercarte a tu público objetivo. \n
+            
+            Sin embargo, aun siendo un canal tan eficiente y atractivo, muchas personas y marcas aún no saben cómo vender a través de la red social.\n
+            
+            Te presentamos un video que te puede ayudar: https://www.instagram.com/reel/CkwMOTvv0mt/?igshid=MDJmNzVkMjY= \n'''
+
         elif Responses.id == "999999":
+            return '''Te esperamos en tu próxima lección. Nos vemos! \n'''
+
+        elif Responses.id == "900000":
             if message == "1":
                 return '''1. Ve a tu pagina de perfil y pulsa donde dice “Editar perfil.\n
                 2. Una vez en la seccion donde puedes editar tu perfil podras ver un campo llamado “nombre de usuario”. Ahi mismo te deja editarlo.\n
