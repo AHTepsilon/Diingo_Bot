@@ -43,8 +43,8 @@ class DiingoBot:
         try:
             pos = pt.locateOnScreen("assets/file.png", confidence = .7)
             pt.moveTo(pos[0:2], duration=self.speed)
-            pt.moveRel(890, -50, duration=self.speed)
-            #pt.moveRel(50, -50, duration=self.speed)
+            #pt.moveRel(890, -50, duration=self.speed)
+            pt.moveRel(45, -50, duration=self.speed)
         except Exception as e:
             print('Exception: (get_message) ', e)
         
@@ -59,7 +59,7 @@ class DiingoBot:
 
     def copy_message(self):
         pt.doubleClick(interval=.3)
-        sleep(self.speed)
+        #sleep(self.speed)
         mouse.click(Button.left, 3)
         sleep(self.speed)
         pt.keyDown('ctrl')

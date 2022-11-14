@@ -1,7 +1,10 @@
+from user import User
+
 class Responses:
 
-    id = "000018"
+    id = "000000"
     controlBoolean = True
+    us = ""
 
     def response(self, input):
         message = input.lower()
@@ -14,6 +17,7 @@ class Responses:
 
             if "1" in message:
                 Responses.id = "000001"
+                Responses.us = User("user")
             
             elif "2" in message:
                 Responses.id = "000002"
@@ -330,6 +334,31 @@ class Responses:
             Sin embargo, aun siendo un canal tan eficiente y atractivo, muchas personas y marcas aún no saben cómo vender a través de la red social.\n
             
             Te presentamos un video que te puede ayudar: https://www.instagram.com/reel/CkwMOTvv0mt/?igshid=MDJmNzVkMjY= \n'''
+        
+        elif Responses.id == "000022":
+            return '''
+            Un reel en Instagram es una herramienta propia de la plataforma social que permite a los usuarios crear videos cortos. Contiene funciones de grabación y edición, así como efectos, stickers, audio, música, entre otras más. La duración de los contenidos puede ir desde 15 a 60 segundos.  \n
+            
+            Reel en Instagram no solo es una herramienta de grabación y edición de videos, sino que también funge como un espacio de descubrimiento dentro de la misma red social para encontrar contenido afín a los gustos e intereses de cada usuario.\n
+            
+            Te presentamos un video que te puede ayudar: https://www.instagram.com/reel/CQjTZTppxay/?utm_source=ig_web_copy_link \n'''
+        
+        elif Responses.id == "000023":
+            return '''
+            En pocas palabras: si tu público objetivo está ya en Instagram y tienes la disposición de invertir algo de tiempo y recursos en crear un contenido especialmente para ellos, entonces la respuesta es sí. Aprender cómo manejar Instagram puede ayudarte a expandir tu negocio.\n
+            
+            Vamos a analizarlo más detenidamente. Lo primero es saber que Instagram es un canal visual. Si te pasas el día haciendo fotos interesantes o tus fantásticos productos son aptos para Instagram, es decir, de los que entran por los ojos, esta es la plataforma idónea para ti. Piénsalo de la siguiente manera: si eres una marca que vende directamente al usuario, te dedicas a la fotografía, eres artista, blogger o un genio de las manualidades, significa que ya tienes un montón de material para enseñar. Con Instagram, puedes aprovecharte del contenido visual que ya tienes para ampliar tu clientela y conectar con más clientes potenciales online.\n
+            
+            Te presentamos un video que te puede ayudar: https://www.instagram.com/reel/CkzDDz1p89g/?igshid=YmMyMTA2M2Y= \n'''
+        
+        elif Responses.id == "000024":
+            return '''
+            Aunque Instagram es todo visual, sería imprudente no utilizar su funcionalidad de texto. Puedes acompañar unas buenas fotos o videos con storytelling, contando una historia sobre cómo decidiste crear tu producto o lanzar el negocio. También puedes responder las preguntas más frecuentes de tu público o hablar de los procesos internos de tu negocio.\n
+            
+            La gente le compra a la gente. Cuenta a tu audiencia las historias que les permitirán conocer a tu marca y tal vez a ti. No te limites a la descripción dura del producto y el precio.\n
+            
+            Te presentamos un video que te puede ayudar: https://www.instagram.com/reel/Ckq0nE8M0vl/?igshid=YmMyMTA2M2Y= \n'''
+
 
         elif Responses.id == "999999":
             return '''Te esperamos en tu próxima lección. Nos vemos! \n'''

@@ -12,4 +12,4 @@ while True:
     newBot.box_input()
     newBot.send_message()
 
-    sleep(1)
+    sleep(10)
