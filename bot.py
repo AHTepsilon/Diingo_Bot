@@ -50,7 +50,7 @@ class DiingoBot:
         
     def closeRespondBox(self):
         try:
-            pos = pt.locateOnScreen("assets/closeRespond.png", confidence = .8)
+            pos = pt.locateOnScreen("assets/closeRespond.png", confidence = .6)
             pt.moveTo(pos[0:2], duration=self.speed)
             pt.doubleClick(interval=self.click_speed)
             pt.moveRel(30, 30, duration=self.speed)

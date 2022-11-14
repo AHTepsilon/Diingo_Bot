@@ -7,7 +7,6 @@ sleep(4)
 while True:
     newBot.navigation()
     newBot.get_message()
-    newBot.closeRespondBox()
     newBot.copy_message()
     newBot.box_input()
     newBot.send_message()
